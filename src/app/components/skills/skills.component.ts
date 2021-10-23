@@ -14,19 +14,18 @@ export class SkillsComponent implements OnInit {
     skills_2 : false
   }
 
-  skills: [] = {
-    frontend: [
-      { name: 'html', number: '90%' },
-      { name: 'css', number: '90%'},
-      { name: 'javascript', number: '85%' },
-      { name: 'angular', number: '80%' }
-    ],
-    backend: [
-      { name: 'Node Js', number: '40%' }
-    ]
-  }
+  skills;
 
   constructor() {
+    this.skills = {
+      frontend: [
+        { name: 'html', number: '90%' }, 
+        { name: 'css', number: '90%'},
+        { name: 'javascript', number: '85%' },
+        { name: 'angular', number: '80%' }],
+      backend: [{ name: 'Node Js', number: '40%'}],
+    }
+    console.log(this.skills);
   }
 
   ngOnInit() {

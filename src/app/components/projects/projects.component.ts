@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: array[] = [
-    {
+  projects;
+
+  constructor() {
+    this.projects = [
+      {
       title: 'Mobile App - React Native', 
       description: 'Mobile App using a React Native Bluetooth Low Energy library wrapping Multiplatform Ble Adapter (react-native-ble-plx)', 
       img: 'portfolio2.png', 
@@ -32,9 +35,8 @@ export class ProjectsComponent implements OnInit {
       img: 'portfolio5.png', 
       link: 'https://github.com/valentinacmp/stats-preview-card'
     }
-  ]
-
-  constructor() { }
+    ]
+   }
 
   ngOnInit() {
   }

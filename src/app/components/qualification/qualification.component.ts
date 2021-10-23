@@ -12,21 +12,19 @@ export class QualificationComponent implements OnInit {
     work : false
   }
 
-  qualifications: array[] ={
-    education: [
-      {title: 'Computer Engineer', subtitle: 'Universidad Rafael Urdaneta', calender: '2015 - 2019', rounder: true, line: true},
-      {title: 'High Diploma', subtitle: 'Colegio La Presentación', calender: '2009 - 2014', rounder: false, line: true}
-    ],
-    work: [
-      {title: 'Frontend Developer', subtitle: 'Forcast - Chile (Remote)', calender: '2019 - 2020', rounder: true, line: true},
-      {title: 'Web Developer', subtitle: 'InSite, C.A - Venezuela', calender: '2018 - 2019', rounder: false, line: true},
-      {title: 'Intern', subtitle: 'InSite, C.A - Venezuela', calender: '2018 - 2019', rounder: true, line: false}
-    ]
-  }
-
+  qualifications;
   services_modal: boolean;
 
   constructor() {
+    this.qualifications = {
+      education: [
+        {title: 'Computer Engineer', subtitle: 'Universidad Rafael Urdaneta', calender: '2015 - 2019', rounder: true, line: true},
+        {title: 'High Diploma', subtitle: 'Colegio La Presentación', calender: '2009 - 2014', rounder: false, line: true}],
+      work: [
+        {title: 'Frontend Developer', subtitle: 'Forcast - Chile (Remote)', calender: '2019 - 2020', rounder: true, line: true},
+        {title: 'Web Developer', subtitle: 'InSite, C.A - Venezuela', calender: '2018 - 2019', rounder: false, line: true},
+        {title: 'Intern', subtitle: 'InSite, C.A - Venezuela', calender: '2018 - 2019', rounder: true, line: false}]
+    }
     this.services_modal = false;
   }
 
