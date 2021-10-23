@@ -1,0 +1,114 @@
+<section class="qualification section">
+  <h2 class="section__title">Qualification</h2>
+  <span class="section__subtitle">My personal journey</span>
+
+  <div class="qualification__container container">
+    <div class="qualification__tabs">
+      <div (click)="tabs.education = !tabs.education;tabs.work = false" [ngClass]="{'qualification__active': tabs.education}" class="qualification__button button--flex">
+        <i class="uil uil-graduation-cap qualification__icon"></i>
+        Education
+      </div>
+
+      <div (click)="tabs.work = !tabs.work;tabs.education = false" [ngClass]="{'qualification__active': tabs.work}" class="qualification__button button--flex">
+        <i class="uil uil-briefcase-alt qualification__icon"></i>
+        Work
+      </div>
+    </div>
+
+    <div class="qualification__sections">
+      <!-- QUALIFICATION CONTENT #1-->
+      <div *ngIf="tabs.education" class="qualification__content" data-content id="education">
+        <!-- EDUCATION-->
+        <div *ngFor="let qualification of qualifications.education" class="qualification__data">
+          <div *ngIf="qualification.rounder === false" ></div>
+          <div *ngIf="qualification.rounder === false">
+            <span class="qualification__rounder"></span>
+          </div>
+          <div>
+            <h3 class="qualification__title">{{qualification.title}}</h3>
+            <span class="qualification__subtitle">{{qualification.subtitle}}</span>
+            <div class="qualification__calender">
+              <i class="uil uil-calendar-alt"></i>
+              {{qualification.calender}}
+            </div>
+          </div>
+          <div *ngIf="qualification.rounder === true">
+            <span class="qualification__rounder"></span>
+            <span class="qualification__line"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUALIFICATION CONTENT #2-->
+      <div *ngIf="tabs.work" class="qualification__content" data-content id="work">
+        <!-- WORK -->
+        <div *ngFor="let qualification of qualifications.work" class="qualification__data">
+          <div *ngIf="!qualification.rounder" ></div>
+          <div *ngIf="!qualification.rounder">
+            <span class="qualification__rounder"></span>
+            <span class="qualification__line"></span>
+          </div>
+          <div>
+            <h3 class="qualification__title">{{qualification.title}}</h3>
+            <span class="qualification__subtitle">{{qualification.subtitle}}</span>
+            <div class="qualification__calender">
+              <i class="uil uil-calendar-alt"></i>
+              {{qualification.calender}}
+            </div>
+          </div>
+          
+          <div *ngIf="qualification.rounder">
+            <span class="qualification__rounder"></span>
+            <span *ngIf="qualification.rounder && qualification.line" class="qualification__line"></span>
+          </div>
+
+        </div>
+
+        <section class="services section" id="services">
+          <h2 class="section__title">Services</h2>
+          <span class="section__subtitle">What I Offer</span>
+
+          <div class="services__container container grid">
+            <!-- SERVICES #1 -->
+            <div class="services__content">
+              <div>
+                <i class="uil uil-arrow services__icon"></i>
+                <h3 class="services__title">Frontend <br> Developer</h3>
+              </div>
+
+              <span (click)="modalOpened()" class="button button--flex button--small button--link services__button">
+                View More
+                <i class="uil uil-arrow-right button__icon"></i>
+              </span>
+
+              <div *ngIf="services_modal" [ngClass]="{'services__modal-active': !services_modal}" class="services__modal">
+                <div class="services__modal-content">
+                  <h4 class="services__modal-title">Frontend <br> Developer</h4>
+                  <i (click)="modalOpened()" class="uil uil-times services__modal-close"></i>
+
+                  <ul class="services__modal-services grid">
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>I develop the user interface.</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>Web page development.</p>
+                    </li>
+                    <li class="services__modal-service">
+                      <i class="uil uil-check-circle services__modal-icon"></i>
+                      <p>I create ux element interactions.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</section>

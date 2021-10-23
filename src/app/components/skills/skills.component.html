@@ -1,0 +1,57 @@
+<section class="skills section" id="skills">
+  <h2 class="section__title">Skills</h2>
+  <span class="section__subtitle">My technical level</span>
+
+  <div class="skills__container container grid">
+    <!-- <div> -->
+      <!-- SKILLS #1 -->
+      <div  class="skills__content" [ngClass]="{'skills__open': showSkills.skills_1, 'skill__close': showSkills.skills_2}">
+        <div class="skills__header">
+          <i class="uil uil-brackets-curly skills__icon"></i>
+
+          <div>
+            <h1 class="skills__titles">Frontend Developer</h1>
+            <span class="skills__subtitle">More than 2 years</span>
+          </div>
+          <i (click)="showSkills.skills_1 = !showSkills.skills_1;showSkills.skills_2 = false" class="uil uil-angle-down skills__arrow"></i>
+        </div>
+
+        <div *ngIf="showSkills.skills_1" class="skills__list grid">
+          <div *ngFor="let skill of skills.frontend" class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">{{skill.name | uppercase}}</h3>
+              <span class="skills__number">{{skill.number }}</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage skills__{{skill.name}}"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS #2 -->
+      <div  class="skills__content" [ngClass]="{'skills__open': showSkills.skills_2, 'skill__close': showSkills.skills_1}">
+        <div class="skills__header">
+          <i class="uil uil-server-network skills__icon"></i>
+
+          <div>
+            <h1 class="skills__titles">Backend Developer</h1>
+            <span class="skills__subtitle">More than 1 years</span>
+          </div>
+          <i (click)="showSkills.skills_2 = !showSkills.skills_2;showSkills.skills_1 = false" class="uil uil-angle-down skills__arrow"></i>
+        </div>
+
+        <div *ngIf="showSkills.skills_2" class="skills__list grid">
+          <div *ngFor="let skill of skills.backend" class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">{{skill.name | uppercase}}</h3>
+              <span class="skills__number">{{skill.number}}</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage skills__node"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>

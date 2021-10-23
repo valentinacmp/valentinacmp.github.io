@@ -1,0 +1,33 @@
+.portfolio__container{
+  overflow: initial;
+}
+
+.portfolio__content{
+  /* padding: 1rem 1.5rem; */
+  /* position: relative; */
+  background-color: var(--container-color);
+  padding: .5rem .5rem 1.25rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: .25;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
+  transition: .3s;
+}
+
+.portfolio__img, video{
+  width: 330px;
+  border-radius: .5rem;
+  justify-self: auto;
+}
+
+.portfolio__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description{
+  margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
